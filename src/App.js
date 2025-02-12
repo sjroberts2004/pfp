@@ -1,26 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { ChakraProvider, Box, Container } from "@chakra-ui/react";
+import Navbar from "./components/Navbar";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import Education from "./components/Education";
+import Contacts from "./components/Contacts";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Hi, I'm Sam and I am pursuing Computer Science.
-          </p>
-          Sorry for improper portfolio website 
-          <p>
-        </p>
-        <a
-          className="App-link"
-          href="https://drive.google.com/file/d/1rSPrXUvmiL13_o0yZ8cDpKcN7QyltnbW/view?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Link to resume
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <Box>
+        <Navbar />
+        <Container maxW="container.md" mt={8}>
+          <Experience />
+          <Projects />
+          <Skills />
+          <Education />
+          <Contacts />
+        </Container>
+      </Box>
+    </ChakraProvider>
   );
 }
 
