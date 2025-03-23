@@ -105,7 +105,7 @@ import {
             {/* Nav links (desktop) */}
             <HStack spacing={4} alignItems="center" display={{ base: 'none', md: 'flex' }}>
               <MotionLink
-                href="https://drive.google.com/file/d/1CMpuKs2GU_6agE_IWhXbMahvN0Tu9tsT/view?usp=sharing"
+                href="https://drive.google.com/file/d/1p6sLfFgrMIZWG0Mft3sKwMZPVRk50vuz/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 px={4}
