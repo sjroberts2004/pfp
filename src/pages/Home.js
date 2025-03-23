@@ -1,50 +1,108 @@
-import { Box, Heading, Text, Button, VStack, HStack, Link } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom"; // For navigation
-import { useTheme } from "../context/ThemeContext"; // Theme toggle if using a custom theme provider
+// src/pages/Home.js
+import { useState, useEffect } from 'react';
+import {
+  Box,
+  Heading,
+  Text,
+  Container,
+  VStack,
+  Image,
+  Stack,
+} from '@chakra-ui/react';
+import { Typewriter } from 'react-simple-typewriter';
+import personalPhoto from '../components/personalphoto.PNG';
+import AboutMe from '../sections/AboutMe';
+import Experience from '../sections/Experience';
 
-const Home = () => {
-  const { toggleColorMode, colorMode } = useTheme(); // For Light/Dark mode toggle
+function Home() {
+  const [useEmojis, setUseEmojis] = useState(false);
+
+  useEffect(() => {
+    const testEmoji = document.createElement('div');
+    testEmoji.innerText = '💻📱💪';
+    document.body.appendChild(testEmoji);
+
+    if (testEmoji.innerText !== '💻📱💪') {
+      setTimeout(() => {
+        setUseEmojis(true);
+      }, 1000);
+    }
+    document.body.removeChild(testEmoji);
+  }, []);
 
   return (
-    <VStack spacing={8} align="center" justify="center" h="100vh">
-      {/* Hero Section */}
-      <Box textAlign="center">
-        <Heading as="h1" size="2xl">
-          Hi, I'm Samuel Roberts 👋
+    <Box pt="80px">
+      {/* Typewriter Section Above Header */}
+      <Box textAlign="center" pb={6}>
+        <Heading as="h2" size="xl" fontWeight="semibold" color="autumn.accent">
+          <Typewriter
+            words={useEmojis
+              ? ['Software Engineer 💻', 'Backend Developer 📱', 'Muscle Enthusiast 💪']
+              : ['Software Engineer', 'Backend Developer', 'Muscle Enthusiast']}
+            loop={true}
+            cursor
+            cursorStyle="_"
+            typeSpeed={100}
+            deleteSpeed={50}
+            delaySpeed={2000}
+          />
         </Heading>
-        <Text fontSize="lg" mt={3}>
-          Software Engineer | AI Enthusiast | Hackathon Winner 🚀
-        </Text>
       </Box>
 
-      {/* Introduction */}
-      <Text textAlign="center" maxW="600px">
-        Passionate about full-stack development, AI, and building innovative solutions. I enjoy
-        hackathons, open-source projects, and solving complex technical problems.
-      </Text>
+      <Container maxW="container.md" px={3} py={10}>
+        <Stack
+          spacing={6}
+          direction={{ base: 'column', md: 'row' }}
+          align={{ base: 'center', md: 'center' }}
+          justify="space-between"
+        >
+          {/* Text content */}
+          <VStack
+            align={{ base: 'center', md: 'start' }}
+            spacing={3}
+            flex="1"
+            textAlign={{ base: 'center', md: 'left' }}
+          >
+            <Heading
+              as="h1"
+              size="2xl"
+              fontWeight="bold"
+              borderBottom="3px solid"
+              borderColor="autumn.accent"
+              pb={1}
+            >
+              Samuel Roberts
+            </Heading>
 
-      {/* Navigation Buttons */}
-      <HStack spacing={4}>
-        <Button as={RouterLink} to="/experience" colorScheme="blue">
-          Experience
-        </Button>
-        <Button as={RouterLink} to="/projects" colorScheme="teal">
-          Projects
-        </Button>
-        <Button as={RouterLink} to="/contact" colorScheme="purple">
-          Contact
-        </Button>
-        <Button as={Link} href="/resume.pdf" download colorScheme="gray">
-          Download Resume
-        </Button>
-      </HStack>
+            <Text fontSize={{ base: 'md', md: 'lg' }} fontWeight="medium" lineHeight="1.5">
+              Currently a junior at the University of Minnesota majoring in Computer Science and a
+              part-time muscle enthusiast who dreams to compete nationally someday{' '}
+              <span role="img" aria-label="cool emoji">
+                😎
+              </span>
+            </Text>
+          </VStack>
 
-      {/* Theme Toggle Button */}
-      <Button onClick={toggleColorMode} mt={4}>
-        Toggle {colorMode === "light" ? "Dark" : "Light"} Mode
-      </Button>
-    </VStack>
+          {/* Responsive image */}
+          <Image
+            src={personalPhoto}
+            alt="Samuel Roberts"
+            width={{ base: '160px', md: '200px' }}
+            maxW="200px"
+            height="auto"
+            border="3px solid"
+            borderColor="autumn.accent"
+            borderRadius="2xl"
+            objectFit="cover"
+            alignSelf={{ base: 'center', md: 'flex-start' }}
+          />
+        </Stack>
+      </Container>
+
+      <AboutMe />
+      <Experience />
+    </Box>
   );
-};
+}
 
 export default Home;
