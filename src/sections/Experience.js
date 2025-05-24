@@ -27,9 +27,9 @@ import {
     {
       company: 'Southwest Airlines',
       role: 'Software Engineering Intern',
-      duration: 'Jan 2025 – Present',
+      duration: 'Jan 2025 – April 2025',
       description:
-        'Currently working on the Customer Communications Services and Southwest Vacations Services teams, contributing to scalable backend systems that power customer experiences.',
+        'Worked simultaneously on the Customer Communications Services (CCS) and Southwest Vacations Services (SWAV) teams. On SWAV, I built a Python-based security layer and integrated SonarQube and Veracode into the CI/CD pipeline using YAML. On CCS, I developed an AWS Lambda processor to deliver real-time flight, gate, and boarding updates to mobile devices, and also led the Figma design and planning for PriceCore, a long-standing internal pricing tool.',
       logo: southwestLogo,
     },
     {

@@ -13,7 +13,7 @@ const Footer = () => {
             icon={<FaLinkedin />}
             aria-label="LinkedIn"
             variant="ghost"
-            fontSize="5xl" // Enlarged icons
+            fontSize="5xl" 
             color={iconColor}
             _hover={{ opacity: 0.8 }}
           />
@@ -23,7 +23,7 @@ const Footer = () => {
             icon={<FaGithub />}
             aria-label="GitHub"
             variant="ghost"
-            fontSize="5xl" // Enlarged icons
+            fontSize="5xl" 
             color={iconColor}
             _hover={{ opacity: 0.8 }}
           />
@@ -33,7 +33,7 @@ const Footer = () => {
             icon={<FaEnvelope />}
             aria-label="Email"
             variant="ghost"
-            fontSize="5xl" // Enlarged icons
+            fontSize="5xl" 
             color={iconColor}
             _hover={{ opacity: 0.8 }}
           />
@@ -41,7 +41,7 @@ const Footer = () => {
       </HStack>
 
       <Text fontSize="sm" color="gray.500">
-        © {new Date().getFullYear()} Samuel Roberts. All rights reserved. Last Updated: 03/23/2025
+        © {new Date().getFullYear()} Samuel Roberts. All rights reserved. Last Updated: 05/24/2025
       </Text>
     </Box>
   );
