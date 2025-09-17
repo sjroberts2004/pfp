@@ -41,7 +41,7 @@ const Footer = () => {
       </HStack>
 
       <Text fontSize="sm" color="gray.500">
-        © {new Date().getFullYear()} Samuel Roberts. All rights reserved. Last Updated: 05/24/2025
+        © {new Date().getFullYear()} Samuel Roberts. All rights reserved. Last Updated: 09/17/2025
       </Text>
     </Box>
   );
